@@ -9,8 +9,8 @@ Pusher.log = function(message) {
 };
 
 $().ready(function() {
-    var pusher = new Pusher('210e48ecc2617b2f1809', {
-    });
+    // var pusher = new Pusher('210e48ecc2617b2f1809', {
+    // });
 
     channel = pusher.subscribe('presence-demo');
     channel.bind('pusher:subscription_succeeded', function(members) {
