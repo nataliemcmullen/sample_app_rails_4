@@ -5,9 +5,6 @@
     <script src="<%= PUSHER_JS_DOMAIN %>/1.12.0/pusher.min.js"></script>
     <%= javascript_include_tag "application" %>
     <script>
-      Pusher.host = '<%= PUSHER_SOCKET_HOST %>';
-      Pusher.ws_port = <%= PUSHER_WS_PORT %>;
-
       var pusher = new Pusher('<%= Pusher.key %>');
     </script>
     <title><%= full_title(yield(:title)) %></title>
