@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: :destroy
 
-
   def index
     @current_user = session[:current_user_id]
     @users = User.paginate(page: params[:page])
@@ -24,7 +23,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    cookies[:current_user]=User.id
     if @user.save
       sign_in @user
       flash[:success] = "Welcome to the Sample App!"
