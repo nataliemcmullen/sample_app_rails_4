@@ -12,6 +12,50 @@
     <%= render 'layouts/shim' %>
   </head>
   <body>
+  <script src="https://js.pusher.com/3.0/pusher.min.js"></script>
+  <script>
+    // Enable pusher logging - don't include this in production
+    Pusher.log = function(message) {
+      if (window.console && window.console.log) {
+        window.console.log(message);
+      }
+    };
+
+    var pusher = new Pusher('210e48ecc2617b2f1809', {
+      encrypted: true
+    });
+
+  channel = pusher.subscribe('presence-demo');
+  channel.bind('pusher:subscription_succeeded', function(members){
+    $('#presence').empty()
+
+    // members.each(add_member);
+
+    console.log("Count", members.count)
+    document.getElementById("presence").innerHTML = members.count;
+  })
+
+  channel.bind('pusher:member_removed', function(member){
+    $('#presence_' + member.id).remove();
+    document.getElementById("presence").innerHTML = channel.members.count;
+    console.log("Count", channel.members.count)
+  })
+
+  channel.bind('pusher:member_added', function(member){
+    // add_member(member)
+    document.getElementById("presence").innerHTML = channel.members.count;
+    console.log("Count", channel.members.count)
+  })
+
+  channel.bind("message", function(data) {
+    speak(data.user_id, data.text)
+  })
+
+
+
+  </script>
+
+    </script>
     <%= render 'layouts/header' %>
     <div class="container">
       <% flash.each do |key, value| %>
