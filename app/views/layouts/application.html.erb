@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script src="http://js.pusher.com/3.0/pusher.min.js"></script>
     <script>
-Pusher.log = function(message) {
+    Pusher.log = function(message) {
       if (window.console && window.console.log) {
         window.console.log(message);
       }
@@ -13,6 +12,7 @@ Pusher.log = function(message) {
     var pusher = new Pusher('210e48ecc2617b2f1809', {
       encrypted: true
     });
+
 
 
     channel = pusher.subscribe('presence-demo');
