@@ -1,4 +1,3 @@
-
 <% if signed_in? %>
   <div class="row">
     <aside class="span4">
@@ -14,9 +13,9 @@
     </aside>
     <div class="span8">
       <h3>Widgets</h3>
-      <div class="weather-wrapper">
-    <div class="weather-card">
-        <div id="accept" class="weather-icon sun"></div>
+<div class="widget-wrapper">
+    <div class="widget-card">
+        <div id="accept" class="widget-icon cookie"></div>
         <p id="test"></p>
         <h2>Cookie Widget</h2>
         <h1 id="presence"></h1>
@@ -27,15 +26,15 @@
     </div>
   </div>
 <% else %>
-<h1>Welcome to this Sample App: Widgets</h1>
+<h1>Welcome to this Sample App</h1>
 
 <center>
 <%= link_to "Sign up now!", signup_path,
                                 class: "btn btn-large btn-primary" %>
                               </center>
-<div class="weather-wrapper">
-    <div class="weather-card">
-        <div id="accept" class="weather-icon sun"></div>
+<div class="widget-wrapper">
+    <div class="widget-card">
+        <div id="accept" class="widget-icon cookie"></div>
         <p id="test"></p>
         <h2>Cookie Widget</h2>
         <h1 id="presence"></h1>
