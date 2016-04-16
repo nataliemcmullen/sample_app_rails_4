@@ -5,7 +5,8 @@
     <script src="<%= PUSHER_JS_DOMAIN %>/1.12.0/pusher.min.js"></script>
     <%= javascript_include_tag "application" %>
     <script>
-      var pusher = new Pusher('<%= Pusher.key %>');
+          var pusher = new Pusher('210e48ecc2617b2f1809', {
+    });
     </script>
     <title><%= full_title(yield(:title)) %></title>
     <%= stylesheet_link_tag "application", media: "all",
