@@ -21,14 +21,6 @@ Pusher.log = function(message) {
 };
 
 $().ready(function() {
-    var stack = [];
-    var queue = [];
-    var myId = 0;
-
-    var pusher = new Pusher('210e48ecc2617b2f1809', {
-        encrypted: true
-    });
-
     channel = pusher.subscribe('presence-demo');
     channel.bind('pusher:subscription_succeeded', function(members) {
         if (channel.members.count > 3) {

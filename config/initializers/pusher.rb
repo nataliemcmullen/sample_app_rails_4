@@ -5,3 +5,6 @@ Pusher.key = '210e48ecc2617b2f1809'
 Pusher.secret = '53784fc18606ed84bab8'
 Pusher.logger = Rails.logger
 Pusher.encrypted = true
+PUSHER_JS_DOMAIN = 'http://js.pusher.com'
+PUSHER_SOCKET_HOST = 'ws.pusherapp.com'
+PUSHER_WS_PORT = 80
